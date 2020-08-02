@@ -1,0 +1,2 @@
+# fanuc-vscode
+ 

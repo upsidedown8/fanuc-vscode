@@ -1,0 +1,25 @@
+{
+    "name": "fanuc-vscode",
+    "displayName": "fanuc-vscode",
+    "description": "Syntax highlighting for fanuc gcode",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "fanucgcode",
+            "aliases": ["FANUC G-Code", "fanucgcode"],
+            "extensions": [".pa",".p1",".p2",".p3"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "fanucgcode",
+            "scopeName": "source.fanucgcode",
+            "path": "./syntaxes/fanucgcode.tmLanguage.json"
+        }]
+    }
+}
