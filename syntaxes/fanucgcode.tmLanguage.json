@@ -1,29 +1,88 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "FANUC G-Code",
+	"name": "fanucgcode",
 	"patterns": [
 		{
 			"include": "#keywords"
 		},
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#constants"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.fanucgcode",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.fanucgcode",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.fanucgcode",
-					"match": "\\\\."
+					"name": "keyword.control.less.fanucgcode",
+					"match": "(%|/)"
+				},
+				{
+					"name": "keyword.control.fanucgcode",
+					"match": "&F=/.+/"
+				},
+				{
+					"name": "keyword.control.fanucgcode",
+					"match": "<.+\\..+>"
+				},
+				{
+					"name": "keyword.control.fanucgcode",
+					"match": "M[0-9]+"
+				},
+				{
+					"name": "keyword.control.fanucgcode",
+					"match": "(?i)(GOTO|WHILE|IF|DO|ELSE)"
+				},
+				{
+					"name": "keyword.other.fanucgcode",
+					"match": "\\b(?i)(GT|LT)"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.fanucgcode",
+					"begin": "\\(",
+					"end": "\\)"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.fanucgcode",
+					"begin": "'",
+					"end": "'"
+				},
+				{
+					"name": "string.quoted.double.fanucgcode",
+					"begin": "\"",
+					"end": "\""
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.language.fanucgcode",
+					"match": "#[0-9]+"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language",
+					"match": "\\b(?i)(KEYWORD)\\b"
 				}
 			]
 		}

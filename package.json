@@ -4,7 +4,7 @@
     "description": "Syntax highlighting for fanuc gcode",
     "version": "0.0.1",
     "engines": {
-        "vscode": "^1.47.0"
+        "vscode": "^1.35.0"
     },
     "categories": [
         "Programming Languages"
